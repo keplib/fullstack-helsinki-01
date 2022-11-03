@@ -1,15 +1,22 @@
 import { useState } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const Hello = (props) => {
+  return (
+    <div>
+      <p>Hello {props.name}! You are {props.age} old!</p>
+    </div>
+  )
+}
+
+const App = () => {
+  const name = 'Peter';
+  const age = 26;
 
   return (
-    <div className="App">
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+    <div >
+      <Hello name='Lizzy' age={age}/>
+      <Hello name={name} age={26+10}/>
     </div>
   )
 }
