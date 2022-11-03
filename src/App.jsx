@@ -1,22 +1,26 @@
-import { useState } from 'react'
+import Header from './components/Header';
+import Content from './components/Content';
+import Total from './components/Total';
 
-
-const Hello = (props) => {
-  return (
-    <div>
-      <p>Hello {props.name}! You are {props.age} old!</p>
-    </div>
-  )
-}
 
 const App = () => {
-  const name = 'Peter';
-  const age = 26;
+  const course = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
 
   return (
-    <div >
-      <Hello name='Lizzy' age={age}/>
-      <Hello name={name} age={26+10}/>
+    <div>
+      <Header header={course}/>
+      <Content 
+        part1={part1} point1={exercises1}
+        part2={part2} point2={exercises2}
+        part3={part3} point3={exercises3}
+      />
+      <Total exercises1={exercises1} exercises2={exercises2} exercises3={exercises3}/>
     </div>
   )
 }
